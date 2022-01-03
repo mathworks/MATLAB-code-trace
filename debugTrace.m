@@ -9,24 +9,20 @@ if nargin > 3
     expression = string(expression);
 end
 
-vbar = "string(char(10074))";
-
 if nargin == 4
     if label == ""
-        s = "fprintf(1,""%s:%s %s %s = %s\n"",";
-        s = s + """" + function_name + """" + ",";
-        s = s + """" + line_number + """" + ",";
-        s = s + vbar + ",";
+        s = "fprintf(1,""%s = %s    (%s, line %s)\n"",";
         s = s + """" + expression + """" + ",";
-        s = s + "compactDisp(" + expression + ")) < 0";
+        s = s + "compactDisp(" + expression + "),";
+        s = s + """" + function_name + """" + ",";
+        s = s + """" + line_number + """" + ") < 0";
     else
-        s = "fprintf(1,""%s:%s %s %s %s = %s\n"",";
-        s = s + """" + function_name + """" + ",";
-        s = s + """" + line_number + """" + ",";
+        s = "fprintf(1,""%s %s = %s    (%s, line %s)\n"",";
         s = s + """" + label + """" + ",";
-        s = s + vbar + ",";
         s = s + """" + expression + """" + ",";
-        s = s + "compactDisp(" + expression + ")) < 0";
+        s = s + "compactDisp(" + expression + "),";
+        s = s + """" + function_name + """" + ",";
+        s = s + """" + line_number + """" + ") < 0";
     end
 
 elseif nargin == 3
