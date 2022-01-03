@@ -17,7 +17,8 @@ if nargin == 4
         s = s + """" + function_name + """" + ",";
         s = s + """" + line_number + """" + ") < 0";
     else
-        s = "fprintf(1,""%s %s = %s    (%s, line %s)\n"",";
+        s = "fprintf(1,""%s%s %s = %s    (%s, line %s)\n"",";
+        s = s + "repmat('  ',1,length(dbstack)-1)" + ",";
         s = s + """" + label + """" + ",";
         s = s + """" + expression + """" + ",";
         s = s + "compactDisp(" + expression + "),";
