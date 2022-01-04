@@ -1,6 +1,8 @@
 dbclear all
+clc
 
 codeTrace("imscrollpanel",1120,"Entering updateViewport")
+codeTrace("imscrollpanel",1138,"Show scrollbar/sliders?","[showSliderHor showSliderVer]")
 
 %%
-codeTrace("imscrollpanel",1122,"scrollpanel device pixel position: ","spPos")
+imtool("peppers.png")
