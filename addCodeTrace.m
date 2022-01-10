@@ -1,16 +1,16 @@
-function codeTrace(function_name,line_number,label,expression)
-%codeTrace Creates a code trace for a given function and line number
-%   codeTrace(function_name,line_number) creates a code trace for a given
+function addCodeTrace(function_name,line_number,label,expression)
+%addCodeTrace Creates a code trace for a given function and line number
+%   addCodeTrace(function_name,line_number) creates a code trace for a given
 %   function and line number. Whenever the specified line in the specified
 %   function is executed, a trace message will be displayed in the Command
 %   Window.
 %
-%   codeTrace(function_name,line_number,label) creates a code trace that
+%   addCodeTrace(function_name,line_number,label) creates a code trace that
 %   will display a trace message that includes the specified label (a
 %   string). The label will be indented (n-1)*2 spaces, where n is the
 %   depth of the call stack at that moment. 
 %
-%   codeTrace(function_name,line_number,label,expression) creates a code
+%   addCodeTrace(function_name,line_number,label,expression) creates a code
 %   trace that also displays the specified expression (a string) and its
 %   value at the moment of the trace. The expression is evaluated before
 %   the code line is executed, and it is executed in the context of the
