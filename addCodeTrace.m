@@ -51,7 +51,7 @@ end
 function condition = locationCondition(function_name,line_number)
     label = locationLabel(function_name,line_number);
     condition = "fprintf(1,""[trace] %s\n"",";
-    condition = condition + """" + label + """" + ") < 0 % TRACE_CODE";
+    condition = condition + """" + label + """" + ") < 0 % " + codeTraceSuffix;
 end
 
 function condition = expressionCondition(function_name,line_number,expression)
