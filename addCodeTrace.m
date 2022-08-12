@@ -60,7 +60,7 @@ function condition = expressionCondition(function_name,line_number,expression)
     condition = condition + """" + label + """" + ",";
     condition = condition + "repmat('  ',1,length(dbstack)-1)" + ",";
     condition = condition + """" + expression + """" + ",";
-    condition = condition + "compactDisp(" + expression + ")) < 0";
+    condition = condition + "codeTraceCompactDisp(" + expression + ")) < 0";
     condition = condition + codeTraceSuffix;
 end
 
@@ -80,7 +80,7 @@ function condition = labelExpressionCondition(function_name,line_number,label,ex
     condition = condition + "repmat('  ',1,length(dbstack)-1)" + ",";
     condition = condition + """" + label + """" + ",";
     condition = condition + """" + expression + """" + ",";
-    condition = condition + "compactDisp(" + expression + ")) < 0";
+    condition = condition + "codeTraceCompactDisp(" + expression + ")) < 0";
     condition = condition + codeTraceSuffix;
 end
 
