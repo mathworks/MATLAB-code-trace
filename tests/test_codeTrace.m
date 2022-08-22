@@ -31,12 +31,20 @@ classdef test_codeTrace < matlab.unittest.TestCase
             testcase.verifyThat(cmd_win_out,ContainsSubstring("n ="));
         end
 
-        function test_expression_no_label(testcase)
+        function test_expressionNoLabel(testcase)
             import matlab.unittest.constraints.ContainsSubstring
 
             addCodeTrace("fib",2,"","n");
             cmd_win_out = evalc("fib(3)");
             testcase.verifyThat(cmd_win_out,ContainsSubstring("n ="));
-        end        
+        end 
+
+        function test_longFunctionName(testcase)
+            import matlab.unittest.constraints.ContainsSubstring
+
+            addCodeTrace("abcdefghijklmnopqrstuvwxyz",2);
+            cmd_win_out = evalc("abcdefghijklmnopqrstuvwxyz(3)");
+            testcase.verifyThat(cmd_win_out,ContainsSubstring("..."));
+        end
     end
 end

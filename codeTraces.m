@@ -1,14 +1,18 @@
 function T = codeTraces
-    ds = dbstatus;
-    FunctionName = strings(0,1);
-    LineNumber = zeros(0,1);
-    for k = 1:length(ds)
-        if endsWith(ds(k).expression{1},codeTraceSuffix())
-            FunctionName(end+1,1) = ds(k).name;
-            LineNumber(end+1,1) = ds(k).line;
-        end
-    end
+%codeTraces Code traces currently in effect
+%   codeTraces returns a table of code traces currently in effect. The
+%   table contains the variables FunctionName and LineNumber.
+%
+%   See also addCodeTrace, clearCodeTraces.
 
+%   Steve Eddins
+%   Copyright 2022 The MathWorks, Inc.
+
+    ds = dbstatus;
+    expressions = string({ds.expression});
+    ds = ds(endsWith(expressions,codeTraceSuffix()));
+    FunctionName = reshape(string({ds.name}),[],1);
+    LineNumber = reshape(string({ds.line}),[],1);
     T = table(FunctionName,LineNumber);
 end
         

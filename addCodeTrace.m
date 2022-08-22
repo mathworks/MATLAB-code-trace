@@ -20,7 +20,7 @@ function addCodeTrace(function_name,line_number,label,expression)
 %   dbclear all will clear the code traces. To clear just the code traces,
 %   without affecting other breakpoints, call clearCodeTraces.
 %
-%   See also clearCodeTraces.
+%   See also clearCodeTraces, codeTraces.
 
 %   Steve Eddins
 %   Copyright 2022 The MathWorks, Inc.
