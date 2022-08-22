@@ -30,5 +30,13 @@ classdef test_codeTrace < matlab.unittest.TestCase
             cmd_win_out = evalc("fib(3)");
             testcase.verifyThat(cmd_win_out,ContainsSubstring("n ="));
         end
+
+        function test_expression_no_label(testcase)
+            import matlab.unittest.constraints.ContainsSubstring
+
+            addCodeTrace("fib",2,"","n");
+            cmd_win_out = evalc("fib(3)");
+            testcase.verifyThat(cmd_win_out,ContainsSubstring("n ="));
+        end        
     end
 end
