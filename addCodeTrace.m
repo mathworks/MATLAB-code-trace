@@ -50,15 +50,16 @@ end
 
 function condition = locationCondition(function_name,line_number)
     label = locationLabel(function_name,line_number);
-    condition = "fprintf(1,""[trace] %s\n"",";
+    condition = "fprintf(1,""[trace] %s%s\n"",";
+    condition = condition + "repmat('  ',1,length(dbstack)-1)" + ",";    
     condition = condition + """" + label + """" + ") < 0 % " + codeTraceSuffix;
 end
 
 function condition = expressionCondition(function_name,line_number,expression)
     label = locationLabel(function_name,line_number);
     condition = "fprintf(1,""[trace] %s %s%s = %s\n"",";
-    condition = condition + """" + label + """" + ",";
     condition = condition + "repmat('  ',1,length(dbstack)-1)" + ",";
+    condition = condition + """" + label + """" + ",";
     condition = condition + """" + expression + """" + ",";
     condition = condition + "codeTraceCompactDisp(" + expression + ")) < 0";
     condition = condition + codeTraceSuffix;
@@ -66,18 +67,18 @@ end
 
 function condition = labelCondition(function_name,line_number,label)
     loc_label = locationLabel(function_name,line_number);
-    condition = "fprintf(1,""[trace] %s %s%s\n"",";
-    condition = condition + """" + loc_label + """" + ",";
+    condition = "fprintf(1,""[trace] %s%s %s\n"",";
     condition = condition + "repmat('  ',1,length(dbstack)-1)" + ",";
+    condition = condition + """" + loc_label + """" + ",";
     condition = condition + """" + label + """" + ") < 0";
     condition = condition + codeTraceSuffix;
 end
 
 function condition = labelExpressionCondition(function_name,line_number,label,expression)
     loc_label = locationLabel(function_name,line_number);
-    condition = "fprintf(1,""[trace] %s %s%s %s = %s\n"",";
-    condition = condition + """" + loc_label + """" + ",";
+    condition = "fprintf(1,""[trace] %s%s %s %s = %s\n"",";
     condition = condition + "repmat('  ',1,length(dbstack)-1)" + ",";
+    condition = condition + """" + loc_label + """" + ",";
     condition = condition + """" + label + """" + ",";
     condition = condition + """" + expression + """" + ",";
     condition = condition + "codeTraceCompactDisp(" + expression + ")) < 0";
