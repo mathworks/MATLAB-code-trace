@@ -8,11 +8,19 @@ function T = codeTraces
 %   Steve Eddins
 %   Copyright 2022 The MathWorks, Inc.
 
+    FunctionName = strings(0,1);
+    LineNumber = zeros(0,1);
+
     ds = dbstatus;
-    expressions = string({ds.expression});
-    ds = ds(endsWith(expressions,codeTraceSuffix()));
-    FunctionName = reshape(string({ds.name}),[],1);
-    LineNumber = double(reshape(string({ds.line}),[],1));
+    for k = 1:length(ds)
+        for q = 1:length(ds(k).line)
+            if endsWith(ds(k).expression{q},codeTraceSuffix())
+                FunctionName(end+1,1) = ds(k).name;            %#ok<*AGROW> 
+                LineNumber(end+1,1) = double(ds(k).line(q));
+            end
+        end
+    end
+
     T = table(FunctionName,LineNumber);
 end
         
