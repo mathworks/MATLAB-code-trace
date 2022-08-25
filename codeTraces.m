@@ -12,7 +12,7 @@ function T = codeTraces
     expressions = string({ds.expression});
     ds = ds(endsWith(expressions,codeTraceSuffix()));
     FunctionName = reshape(string({ds.name}),[],1);
-    LineNumber = reshape(string({ds.line}),[],1);
+    LineNumber = double(reshape(string({ds.line}),[],1));
     T = table(FunctionName,LineNumber);
 end
         
