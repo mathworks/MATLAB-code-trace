@@ -1,4 +1,4 @@
-classdef test_codeTraces < matlab.unittest.TestCase
+classdef codeTraces_test < matlab.unittest.TestCase
 
     methods (TestMethodTeardown)
         function cleanupCodeTraces(~)

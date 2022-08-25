@@ -1,4 +1,4 @@
-classdef test_clearCodeTraces < matlab.unittest.TestCase
+classdef clearCodeTraces_test < matlab.unittest.TestCase
     methods (TestMethodSetup)
         function clearAllBreakpoints(~)
             dbclear all
