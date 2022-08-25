@@ -9,9 +9,10 @@ function clearCodeTraces
 
     ds = dbstatus;
     for k = 1:length(ds)
-        if endsWith(ds(k).expression{1},codeTraceSuffix())
-            dbclear("in",ds(k).name,"at",string(ds(k).line));
+        for q = 1:length(ds(k).line)
+            if endsWith(ds(k).expression{q},codeTraceSuffix())
+                dbclear("in",ds(k).name,"at",string(ds(k).line(q)));
+            end
         end
     end
 end
-        
