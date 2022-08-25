@@ -117,4 +117,3 @@ function out = shortenString(in,n)
 
     end
 end
-
