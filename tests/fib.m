@@ -6,3 +6,5 @@ elseif n == 1
 else
     out = fib(n-1) + fib(n-2);
 end
+
+% Copyright 2022 The MathWorks, Inc.

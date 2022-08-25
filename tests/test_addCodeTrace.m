@@ -48,3 +48,5 @@ classdef test_addCodeTrace < matlab.unittest.TestCase
         end
     end
 end
+
+% Copyright 2022 The MathWorks, Inc.
