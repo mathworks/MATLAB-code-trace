@@ -33,3 +33,5 @@ classdef clearCodeTraces_test < matlab.unittest.TestCase
         end
     end
 end
+
+% Copyright 2022 The MathWorks, Inc.
