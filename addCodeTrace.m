@@ -1,20 +1,25 @@
-function addCodeTrace(function_name,line_number,label,expression)
+function addCodeTrace(function_name,line_number,options)
 %addCodeTrace Creates a code trace for a given function and line number
 %   addCodeTrace(function_name,line_number) creates a code trace for a given
 %   function and line number. Whenever the specified line in the specified
 %   function is executed, a trace message will be displayed in the Command
 %   Window.
 %
-%   addCodeTrace(function_name,line_number,label) creates a code trace that
-%   will display a trace message that includes the specified label (a
-%   string). The label will be indented (n-1)*2 spaces, where n is the
-%   depth of the call stack at that moment. 
+%   addCodeTrace(function_name,line_number,Name=Value) specifies additional
+%   information to be printed, such as a label or the value of an
+%   expression, as one or more name-value arguments.
 %
-%   addCodeTrace(function_name,line_number,label,expression) creates a code
-%   trace that also displays the specified expression (a string) and its
-%   value at the moment of the trace. The expression is evaluated before
-%   the code line is executed, and it is executed in the context of the
-%   code line.
+%   Name-Value Arguments
+%
+%       Label      text
+%                  Includes the specified label in the trace output.
+%
+%       Expression text
+%                  Includes the specified expression and its value in the
+%                  trace output. The expression is evaluated before the
+%                  code line is executed, and it is evaluated in the
+%                  context and workspace of the function containing the
+%                  code line.
 %
 %   Code traces are implemented using conditional breakpoints, and calling
 %   dbclear all will clear the code traces. To clear just the code traces,
@@ -26,12 +31,14 @@ function addCodeTrace(function_name,line_number,label,expression)
 %   Copyright 2022 The MathWorks, Inc.
 
     arguments
-        function_name (1,1) string
-        line_number   (1,1) double
-        label         (1,1) string = ""
-        expression    (1,1) string = ""
+        function_name      (1,1) string
+        line_number        (1,1) double
+        options.Label      (1,1) string = ""
+        options.Expression (1,1) string = ""
     end
 
+    label = options.Label;
+    expression = options.Expression;
     if (label == "") && (expression == "")
         condition = locationCondition(function_name,line_number);
 

@@ -18,7 +18,7 @@ classdef test_addCodeTrace < matlab.unittest.TestCase
         function test_label(testcase)
             import matlab.unittest.constraints.ContainsSubstring
 
-            addCodeTrace("fib",2,"b-flat horn");
+            addCodeTrace("fib",2,Label = "b-flat horn");
             cmd_win_out = evalc("fib(3)");
             testcase.verifyThat(cmd_win_out,ContainsSubstring("b-flat horn"));
         end
@@ -26,7 +26,7 @@ classdef test_addCodeTrace < matlab.unittest.TestCase
         function test_expression(testcase)
             import matlab.unittest.constraints.ContainsSubstring
 
-            addCodeTrace("fib",2,"b-flat horn","n");
+            addCodeTrace("fib",2,Label = "b-flat horn",Expression = "n");
             cmd_win_out = evalc("fib(3)");
             testcase.verifyThat(cmd_win_out,ContainsSubstring("n ="));
         end
@@ -34,7 +34,7 @@ classdef test_addCodeTrace < matlab.unittest.TestCase
         function test_expressionNoLabel(testcase)
             import matlab.unittest.constraints.ContainsSubstring
 
-            addCodeTrace("fib",2,"","n");
+            addCodeTrace("fib",2,Expression = "n");
             cmd_win_out = evalc("fib(3)");
             testcase.verifyThat(cmd_win_out,ContainsSubstring("n ="));
         end 
