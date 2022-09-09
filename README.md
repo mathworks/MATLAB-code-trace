@@ -25,7 +25,7 @@ See the script CodeTraceExamples.mlx, in the doc folder, for examples.
 
 ## Installation
 
-*Code Trace for MATLAB* requires MATLAB release R2017a or newer.
+*Code Trace for MATLAB* requires MATLAB release R2019b or newer.
 
 Download the files to a folder on your computer, and place that folder on the [MATLAB Search Path](https://www.mathworks.com/help/matlab/matlab_env/what-is-the-matlab-search-path.html).
 
