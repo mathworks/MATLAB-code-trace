@@ -1,7 +1,6 @@
 # Code Trace for MATLAB&reg;
 
-<!-- [![View <File Exchange Title> on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/####-file-exchange-title)  -->
-<!-- Add this icon to the README if this repo also appears on File Exchange via the "Connect to GitHub" feature --> 
+[![View Code Trace for MATLAB on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/118245-code-trace-for-matlab)
 
 *Code Trace for MATLAB* is a collection of functions for creating and manipulating code traces, which can be used to help understand what is happening in code as it executes. A *code trace* prints a brief note to the MATLAB Command Window whenever a specific line of code is executed. A code trace might just print the function name and line number, or it might also print a label and the value of variable or expression.
 
