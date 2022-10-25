@@ -1,4 +1,4 @@
-function tf = printTrace(function_name,line_number,options)
+function tf = displayTrace(function_name,line_number,options)
     % Implementation of trace display. See addCodeTrace help for meaning of
     % the input arguments.
     

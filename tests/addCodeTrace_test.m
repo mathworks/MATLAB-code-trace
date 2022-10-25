@@ -70,7 +70,7 @@ classdef addCodeTrace_test < matlab.unittest.TestCase
             testcase.verifyThat(file_contents,ContainsSubstring("foobar"));
         end
 
-        function test_printTraceOption(testcase)
+        function test_displayTraceOption(testcase)
             import matlab.unittest.constraints.ContainsSubstring
 
             addCodeTrace("fib",2,Label="foobar",DisplayTrace=false);

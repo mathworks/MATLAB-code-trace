@@ -70,7 +70,7 @@ function addCodeTrace(function_name,line_number,options)
         options.ShowStackDepth (1,1) logical = false
     end
 
-    condition = sprintf("codetrace.printTrace(""%s"",%d,%s) %s", ...
+    condition = sprintf("codetrace.displayTrace(""%s"",%d,%s) %s", ...
         function_name,line_number,optionsToNamedArguments(options),codeTraceSuffix);
 
     dbstop("in",function_name,"at",string(line_number),"if",condition)
