@@ -46,6 +46,29 @@ classdef addCodeTrace_test < matlab.unittest.TestCase
             cmd_win_out = evalc("abcdefghijklmnopqrstuvwxyz(3)");
             testcase.verifyThat(cmd_win_out,ContainsSubstring("..."));
         end
+
+        function test_expressionNoOutput(testcase)
+            import matlab.unittest.constraints.ContainsSubstring
+
+            addCodeTrace("fib",2,Expression="disp(""""foobar"""")",...
+                NumExpressionOutputs=0);
+            cmd_win_out = evalc("fib(3)");
+            testcase.verifyThat(cmd_win_out,ContainsSubstring("foobar"));
+        end
+
+        function test_outputFile(testcase)
+            import matlab.unittest.fixtures.TemporaryFolderFixture
+            import matlab.unittest.constraints.ContainsSubstring
+
+            fixture = testcase.applyFixture(TemporaryFolderFixture);
+            output_file = tempname(fixture.Folder);
+
+            addCodeTrace("fib",2,Label="foobar",OutputFile=output_file);
+            fib(3);
+            file_contents = string(fileread(output_file));
+
+            testcase.verifyThat(file_contents,ContainsSubstring("foobar"));
+        end
     end
 end
 

@@ -4,25 +4,39 @@ function tf = printTrace(function_name,line_number,options)
         line_number        (1,1) double
         options.Label      (1,1) string = ""
         options.Expression (1,1) string = ""
+        options.NumExpressionOutputs (1,1) {mustBeNumeric, mustBeMember(options.NumExpressionOutputs,[0 1])} = 1
+        options.OutputFile (1,1) string = ""
     end
 
     tf = false;
+    if options.OutputFile == ""
+        fid = 1;
+    else
+        fid = fopen(options.OutputFile,"a");
+        fid_cleaner = onCleanup(@() fclose(fid));
+    end
 
     loc_label = locationLabel(function_name,line_number);
-    fprintf(1,"[trace] %s%s", ...
+    fprintf(fid,"[trace] %s%s", ...
         repmat('  ',1,length(dbstack)-1), ...
         loc_label);
 
     if options.Label ~= ""
-        fprintf(1," %s",options.Label);
+        fprintf(fid," %s",options.Label);
     end
 
     if options.Expression ~= ""
-        fprintf(1," %s = %s",options.Expression, ...
-            codeTraceCompactDisp(options.Expression));
+        if options.NumExpressionOutputs == 1
+            v = evalin("caller",options.Expression);
+            fprintf(fid," %s = %s",options.Expression, ...
+                codeTraceCompactDisp(v));
+        else
+            fprintf(fid," %s",options.Expression);
+            evalin("caller",options.Expression);
+        end
     end
 
-    fprintf(1,"\n");
+    fprintf(fid,"\n");
 end
 
 function label = locationLabel(function_name,line_number)

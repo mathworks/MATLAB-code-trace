@@ -35,6 +35,8 @@ function addCodeTrace(function_name,line_number,options)
         line_number        (1,1) double
         options.Label      (1,1) string = ""
         options.Expression (1,1) string = ""
+        options.NumExpressionOutputs (1,1) {mustBeNumeric, mustBeMember(options.NumExpressionOutputs,[0 1])} = 1
+        options.OutputFile (1,1) string = ""
     end
 
     condition = sprintf("codetrace.printTrace(""%s"",%d,%s) %s", ...
