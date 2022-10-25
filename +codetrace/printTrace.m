@@ -7,6 +7,7 @@ function tf = printTrace(function_name,line_number,options)
         options.NumExpressionOutputs (1,1) {mustBeNumeric, mustBeMember(options.NumExpressionOutputs,[0 1])} = 1
         options.OutputFile (1,1) string = ""
         options.PrintTrace (1,1) logical = true
+        options.ShowStackDepth (1,1) logical = false
     end
 
     tf = false;
@@ -25,8 +26,13 @@ function tf = printTrace(function_name,line_number,options)
     end
 
     loc_label = locationLabel(function_name,line_number);
+    if options.ShowStackDepth
+        stack_spaces = string(repmat('  ',1,length(dbstack)-2));
+    else
+        stack_spaces = "";
+    end
     fprintfTrace(fid,"[trace] %s%s", ...
-        repmat('  ',1,length(dbstack)-1), ...
+        stack_spaces, ...
         loc_label);
 
     if options.Label ~= ""

@@ -78,6 +78,19 @@ classdef addCodeTrace_test < matlab.unittest.TestCase
 
             testcase.verifyThat(cmd_win_out, ~ContainsSubstring("foobar"));
         end
+
+        function test_showStackDepth(testcase)
+            addCodeTrace("fib",2);
+            cmd_win_out = string(evalc("fib(3)"));
+            lines = split(cmd_win_out,newline);
+            testcase.verifyEqual(strlength(lines(1)),strlength(lines(2)));
+
+            clearCodeTraces
+            addCodeTrace("fib",2,ShowStackDepth=true);
+            cmd_win_out = string(evalc("fib(3)"));
+            lines = split(cmd_win_out,newline);
+            testcase.verifyEqual(strlength(lines(1))+2,strlength(lines(2)));
+        end
     end
 end
 
