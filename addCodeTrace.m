@@ -11,15 +11,44 @@ function addCodeTrace(function_name,line_number,options)
 %
 %   Name-Value Arguments
 %
-%       Label      text
-%                  Includes the specified label in the trace output.
+%       Label      Label to be printed on the trace output.
+%                  text; default is ""
 %
-%       Expression text
-%                  Includes the specified expression and its value in the
-%                  trace output. The expression is evaluated before the
-%                  code line is executed, and it is evaluated in the
-%                  context and workspace of the function containing the
-%                  code line.
+%       Expression Expression to be evaluated
+%                  text; default is "" 
+%
+%                  The expression is evaluated before the code line is
+%                  executed, and it is evaluated in the context and
+%                  workspace of the function containing the code line.
+%
+%       NumExpressionOutputs Number of outputs for evaluating expression
+%                  0 or 1; default is 1
+%
+%                  The number of output arguments to use when evaluating
+%                  Expression. When this is 1, the value returned by the
+%                  expression is displayed, in compact form, on the trace
+%                  line.
+%
+%       OutputFile Name of file for appending the code traces
+%                  text; default is ""
+%
+%                  If provided, code traces are appended to the specified
+%                  file instead of being printed to the Command Window.
+%
+%       DisplayTrace Whether to display traces
+%                  logical; default is true
+%
+%                  If DisplayTrace is true, then trace info is displayed to
+%                  Command Window, or appended to a file if OutputFile is
+%                  specified. If DisplayTrace is false, no trace info is
+%                  displayed.
+%
+%       ShowStackDepth Whether to show the stack depth
+%                  logical; default is false
+%
+%                  If ShowStackDepth is true, then the function name and
+%                  line number in the trace info are idented by two spaces
+%                  for each level in the function call stack.
 %
 %   Code traces are implemented using conditional breakpoints, and calling
 %   dbclear all will clear the code traces. To clear just the code traces,
@@ -37,7 +66,7 @@ function addCodeTrace(function_name,line_number,options)
         options.Expression (1,1) string = ""
         options.NumExpressionOutputs (1,1) {mustBeNumeric, mustBeMember(options.NumExpressionOutputs,[0 1])} = 1
         options.OutputFile (1,1) string = ""
-        options.PrintTrace (1,1) logical = true  
+        options.DisplayTrace (1,1) logical = true  
         options.ShowStackDepth (1,1) logical = false
     end
 

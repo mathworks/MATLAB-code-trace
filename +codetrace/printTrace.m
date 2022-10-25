@@ -1,4 +1,7 @@
 function tf = printTrace(function_name,line_number,options)
+    % Implementation of trace display. See addCodeTrace help for meaning of
+    % the input arguments.
+    
     arguments
         function_name      (1,1) string
         line_number        (1,1) double
@@ -6,7 +9,7 @@ function tf = printTrace(function_name,line_number,options)
         options.Expression (1,1) string = ""
         options.NumExpressionOutputs (1,1) {mustBeNumeric, mustBeMember(options.NumExpressionOutputs,[0 1])} = 1
         options.OutputFile (1,1) string = ""
-        options.PrintTrace (1,1) logical = true
+        options.DisplayTrace (1,1) logical = true
         options.ShowStackDepth (1,1) logical = false
     end
 
@@ -18,7 +21,7 @@ function tf = printTrace(function_name,line_number,options)
         fid_cleaner = onCleanup(@() fclose(fid));
     end
 
-    if options.PrintTrace
+    if options.DisplayTrace
         fprintfTrace = @(varargin) fprintf(varargin{:});
     else
         % no-op
@@ -77,3 +80,5 @@ function out = shortenString(in,n)
 
     end
 end
+
+% Copyright 2022 The MathWorks, Inc.
