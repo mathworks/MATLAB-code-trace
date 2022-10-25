@@ -5,13 +5,24 @@ function tf = printTrace(function_name,line_number,options)
         options.Label      (1,1) string = ""
         options.Expression (1,1) string = ""
     end
-    
+
     tf = false;
 
-    label = locationLabel(function_name,line_number);
-    fprintf(1,"[trace] %s%s\n", ...
+    loc_label = locationLabel(function_name,line_number);
+    fprintf(1,"[trace] %s%s", ...
         repmat('  ',1,length(dbstack)-1), ...
-        label);
+        loc_label);
+
+    if options.Label ~= ""
+        fprintf(1," %s",options.Label);
+    end
+
+    if options.Expression ~= ""
+        fprintf(1," %s = %s",options.Expression, ...
+            codeTraceCompactDisp(options.Expression));
+    end
+
+    fprintf(1,"\n");
 end
 
 function label = locationLabel(function_name,line_number)
