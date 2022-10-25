@@ -14,7 +14,7 @@ function T = codeTraces
     ds = dbstatus;
     for k = 1:length(ds)
         for q = 1:length(ds(k).line)
-            if endsWith(ds(k).expression{q},codeTraceSuffix())
+            if endsWith(ds(k).expression{q},codetrace.codeTraceSuffix())
                 FunctionName(end+1,1) = ds(k).name;            %#ok<*AGROW> 
                 LineNumber(end+1,1) = double(ds(k).line(q));
             end

@@ -71,7 +71,7 @@ function addCodeTrace(function_name,line_number,options)
     end
 
     condition = sprintf("codetrace.displayTrace(""%s"",%d,%s) %s", ...
-        function_name,line_number,optionsToNamedArguments(options),codeTraceSuffix);
+        function_name,line_number,optionsToNamedArguments(options),codetrace.codeTraceSuffix);
 
     dbstop("in",function_name,"at",string(line_number),"if",condition)
 end
