@@ -40,8 +40,8 @@ function addCodeTrace(function_name,line_number,options)
     label = options.Label;
     expression = options.Expression;
     if (label == "") && (expression == "")
-        condition = sprintf("codetrace.printTrace(""%s"",%d) %s", ...
-            function_name,line_number,codeTraceSuffix);
+        condition = sprintf("codetrace.printTrace(""%s"",%d,%s) %s", ...
+            function_name,line_number,optionsToNamedArguments(options),codeTraceSuffix);
 
     elseif (label == "") && (expression ~= "")
         condition = expressionCondition(function_name,line_number,expression);
@@ -117,4 +117,11 @@ function out = shortenString(in,n)
         out = in;
 
     end
+end
+
+function s = optionsToNamedArguments(options)
+    s = "";
+    s = s + "Label=""" + options.Label + """";
+    s = s + ",";
+    s = s + "Expression=""" + options.Expression + """";
 end

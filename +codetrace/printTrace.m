@@ -1,4 +1,11 @@
-function tf = printTrace(function_name,line_number)
+function tf = printTrace(function_name,line_number,options)
+    arguments
+        function_name      (1,1) string
+        line_number        (1,1) double
+        options.Label      (1,1) string = ""
+        options.Expression (1,1) string = ""
+    end
+    
     tf = false;
 
     label = locationLabel(function_name,line_number);
