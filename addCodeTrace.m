@@ -40,7 +40,8 @@ function addCodeTrace(function_name,line_number,options)
     label = options.Label;
     expression = options.Expression;
     if (label == "") && (expression == "")
-        condition = locationCondition(function_name,line_number);
+        condition = sprintf("codetrace.printTrace(""%s"",%d) %s", ...
+            function_name,line_number,codeTraceSuffix);
 
     elseif (label == "") && (expression ~= "")
         condition = expressionCondition(function_name,line_number,expression);
