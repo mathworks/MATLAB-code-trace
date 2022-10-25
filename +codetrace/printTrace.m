@@ -6,6 +6,7 @@ function tf = printTrace(function_name,line_number,options)
         options.Expression (1,1) string = ""
         options.NumExpressionOutputs (1,1) {mustBeNumeric, mustBeMember(options.NumExpressionOutputs,[0 1])} = 1
         options.OutputFile (1,1) string = ""
+        options.PrintTrace (1,1) logical = true
     end
 
     tf = false;
@@ -16,27 +17,34 @@ function tf = printTrace(function_name,line_number,options)
         fid_cleaner = onCleanup(@() fclose(fid));
     end
 
+    if options.PrintTrace
+        fprintfTrace = @(varargin) fprintf(varargin{:});
+    else
+        % no-op
+        fprintfTrace = @(varargin) 1;
+    end
+
     loc_label = locationLabel(function_name,line_number);
-    fprintf(fid,"[trace] %s%s", ...
+    fprintfTrace(fid,"[trace] %s%s", ...
         repmat('  ',1,length(dbstack)-1), ...
         loc_label);
 
     if options.Label ~= ""
-        fprintf(fid," %s",options.Label);
+        fprintfTrace(fid," %s",options.Label);
     end
 
     if options.Expression ~= ""
         if options.NumExpressionOutputs == 1
             v = evalin("caller",options.Expression);
-            fprintf(fid," %s = %s",options.Expression, ...
+            fprintfTrace(fid," %s = %s",options.Expression, ...
                 codeTraceCompactDisp(v));
         else
-            fprintf(fid," %s",options.Expression);
+            fprintfTrace(fid," %s",options.Expression);
             evalin("caller",options.Expression);
         end
     end
 
-    fprintf(fid,"\n");
+    fprintfTrace(fid,"\n");
 end
 
 function label = locationLabel(function_name,line_number)
