@@ -43,7 +43,7 @@ function tf = printTrace(function_name,line_number,options)
         if options.NumExpressionOutputs == 1
             v = evalin("caller",options.Expression);
             fprintfTrace(fid," %s = %s",options.Expression, ...
-                codeTraceCompactDisp(v));
+                codetrace.compactDisp(v));
         else
             fprintfTrace(fid," %s",options.Expression);
             evalin("caller",options.Expression);
