@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB 2022b"><title>Code Trace Examples</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(192, 76, 11); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S1 { margin-bottom: 20px; padding-bottom: 4px;  }
+.S2 { margin: 0px; padding: 10px 0px 10px 5px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 700; text-align: start;  }
+.S3 { margin: -1px 0px 0px; padding: 10px 0px 10px 7px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: start;  }
+.S4 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S5 { border-left: 0px none rgb(33, 33, 33); border-right: 0px none rgb(33, 33, 33); border-top: 0px none rgb(33, 33, 33); border-bottom: 0px none rgb(33, 33, 33); border-radius: 0px; padding: 0px; line-height: 15.6px; min-height: 16px; white-space: pre; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 12px;  }
+.S6 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.CodeBlock { background-color: #F5F5F5; margin: 10px 0 10px 0; }
+.S7 { border-left: 1px solid rgb(191, 191, 191); border-right: 1px solid rgb(191, 191, 191); border-top: 1px solid rgb(191, 191, 191); border-bottom: 1px solid rgb(191, 191, 191); border-radius: 4px; padding: 6px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S8 { margin: 10px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S9 { border-left: 1px solid rgb(191, 191, 191); border-right: 1px solid rgb(191, 191, 191); border-top: 1px solid rgb(191, 191, 191); border-bottom: 1px solid rgb(191, 191, 191); border-radius: 4px 4px 0px 0px; padding: 6px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S10 { color: rgb(33, 33, 33); padding: 10px 0px 6px 17px; background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box; font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px; overflow-x: hidden; line-height: 17.234px;  }
+/* Styling that is common to warnings and errors is in diagnosticOutput.css */.embeddedOutputsErrorElement {    min-height: 18px;    max-height: 550px;}
+.embeddedOutputsErrorElement .diagnosticMessage-errorType {    overflow: auto;}
+.embeddedOutputsErrorElement.inlineElement {}
+.embeddedOutputsErrorElement.rightPaneElement {}
+/* Styling that is common to warnings and errors is in diagnosticOutput.css */.embeddedOutputsWarningElement {    min-height: 18px;    max-height: 550px;}
+.embeddedOutputsWarningElement .diagnosticMessage-warningType {    overflow: auto;}
+.embeddedOutputsWarningElement.inlineElement {}
+.embeddedOutputsWarningElement.rightPaneElement {}
+/* Copyright 2015-2019 The MathWorks, Inc. *//* In this file, styles are not scoped to rtcContainer since they could be in the Dojo Tooltip */.diagnosticMessage-wrapper {    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;    font-size: 12px;}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType {    color: rgb(255,100,0);}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType a {    color: rgb(255,100,0);    text-decoration: underline;}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType {    color: rgb(230,0,0);}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType a {    color: rgb(230,0,0);    text-decoration: underline;}
+.diagnosticMessage-wrapper .diagnosticMessage-messagePart,.diagnosticMessage-wrapper .diagnosticMessage-causePart {    white-space: pre-wrap;}
+.diagnosticMessage-wrapper .diagnosticMessage-stackPart {    white-space: pre;}
+.embeddedOutputsTextElement,.embeddedOutputsVariableStringElement {    white-space: pre;    word-wrap:  initial;    min-height: 18px;    max-height: 550px;}
+.embeddedOutputsTextElement .textElement,.embeddedOutputsVariableStringElement .textElement {    overflow: auto;}
+.textElement,.rtcDataTipElement .textElement {    padding-top: 2px;}
+.embeddedOutputsTextElement.inlineElement,.embeddedOutputsVariableStringElement.inlineElement {}
+.inlineElement .textElement {}
+.embeddedOutputsTextElement.rightPaneElement,.embeddedOutputsVariableStringElement.rightPaneElement {    min-height: 16px;}
+.rightPaneElement .textElement {    padding-top: 2px;    padding-left: 9px;}
+.S11 { border-left: 1px solid rgb(191, 191, 191); border-right: 1px solid rgb(191, 191, 191); border-top: 1px solid rgb(191, 191, 191); border-bottom: 0px none rgb(33, 33, 33); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S12 { border-left: 1px solid rgb(191, 191, 191); border-right: 1px solid rgb(191, 191, 191); border-top: 0px none rgb(33, 33, 33); border-bottom: 0px none rgb(33, 33, 33); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S13 { border-left: 1px solid rgb(191, 191, 191); border-right: 1px solid rgb(191, 191, 191); border-top: 0px none rgb(33, 33, 33); border-bottom: 1px solid rgb(191, 191, 191); border-radius: 0px; padding: 0px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S14 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.embeddedOutputsVariableTableElement .ClientViewDiv  table tr {  height: 22px;  white-space: nowrap;}
+.embeddedOutputsVariableTableElement .ClientViewDiv  table tr td,.embeddedOutputsVariableTableElement .ClientViewDiv  table tr th {  background-color:white;  text-overflow: ellipsis;  font-family: 'Arial', sans-serif;  font-size: 12px;  overflow : hidden;}
+.embeddedOutputsVariableTableElement .ClientViewDiv  table tr span {  text-overflow: ellipsis;  padding: 3px;}
+.embeddedOutputsVariableTableElement .ClientViewDiv  table tr th {    color: rgba(0,0,0,0.5);  padding: 3px;  font-size: 9px;}
+.S15 { margin: 15px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 17px; font-weight: 700; text-align: left;  }</style></head><body><div class = rtcContent><h1  class = 'S0' id = 'T_BA161133' ><span>Code Trace Examples</span></h1><div  class = 'S1'><div  class = 'S2'><span style=' font-weight: bold;'>Table of Contents</span></div><div  class = 'S3'><a href = "#H_5DA0013C"><span>Display function name and line number
+</span></a><a href = "#H_EF40317D"><span>List code traces currently in effect
+</span></a><a href = "#H_4D146072"><span>Clear code traces
+</span></a><a href = "#H_4E4F3926"><span>Display the value of a variable or expression
+</span></a><a href = "#H_34A7021D"><span>Display a label
+</span></a><a href = "#H_537F6BCA"><span>Other Options for addCodeTrace
+</span></a><span>    </span><a href = "#H_28A2026B"><span>NumExpressionOutputs
+</span></a><span>    </span><a href = "#H_129DC2A6"><span>OutputFile
+</span></a><span>    </span><a href = "#H_A53737C6"><span>DisplayTrace</span></a></div></div><div  class = 'S4'><span>A </span><span style=' font-style: italic;'>code trace</span><span> displays the function name and line number to the Command Window whenever a specific line of code is executed. It can also display the value of a value or expression within the executing function.</span></div><div  class = 'S4'><span>The following examples illustrate the use of code traces using the function </span><span style=' font-family: monospace;'>fib</span><span>, which is a recursive implementation of a Fibonacci number generator.</span></div><div class = 'preformatted-matlab' style = 'margin: 10px 3px 10px 55px; padding: 10px 10px 10px 5px; '><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">function </span><span >out = fib(n)</span></span></div><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">if </span><span >n == 0</span></span></div><div  class = 'S5'><span style="white-space: pre"><span >    out = 0;</span></span></div><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">elseif </span><span >n == 1</span></span></div><div  class = 'S5'><span style="white-space: pre"><span >    out = 1;</span></span></div><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">else</span></span></div><div  class = 'S5'><span style="white-space: pre"><span >    out = fib(n-1) + fib(n-2);</span></span></div><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span></span></div></div><h2  class = 'S6' id = 'H_5DA0013C' ><span>Display function name and line number</span></h2><div  class = 'S4'><span>This example shows how to display the function name and the line number whenever a specific code line is executed. First, add the code trace.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre"><span >addCodeTrace(</span><span style="color: rgb(167, 9, 245);">"fib"</span><span >,2)</span></span></div></div></div><div  class = 'S8'><span>Next, call the function </span><span style=' font-family: monospace;'>fib</span><span>:</span></div><div class="CodeBlock"><div class="inlineWrapper outputs"><div  class = 'S9'><span style="white-space: pre"><span >fib(3)</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="23BD5FBC" prevent-scroll="true" data-testid="output_0" style="width: 1145px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;"><div class="textElement eoOutputContent" data-width="1115" data-height="76" data-hashorizontaloverflow="false" style="max-height: 261px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;">[trace]              fib:2    
+[trace]              fib:2    
+[trace]              fib:2    
+[trace]              fib:2    
+[trace]              fib:2    </div></div><div class='variableElement' style='font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 12px; '>ans = 2</div></div></div></div><div  class = 'S8'><span>Each trace line includes the text "[trace]" (to distinguish these lines from other Command Window output), the function name, and the line number. </span></div><div  class = 'S4'><span>The </span><span style=' font-family: monospace;'>addCodeTrace</span><span> function includes an optional argument called </span><span style=' font-family: monospace;'>ShowStackDepth</span><span>, which indents the function name and line number based on the depth of the function call stack. This option can be helpful for visualizing the workings of a recursive function such as </span><span style=' font-family: monospace;'>fib</span><span>.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S11'><span style="white-space: pre"><span >clearCodeTraces</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre"><span >addCodeTrace(</span><span style="color: rgb(167, 9, 245);">"fib"</span><span >,2,ShowStackDepth = true)</span></span></div></div><div class="inlineWrapper outputs"><div  class = 'S13'><span style="white-space: pre"><span >fib(3)</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="A6CBEED5" prevent-scroll="true" data-testid="output_2" style="width: 1145px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;"><div class="textElement eoOutputContent" data-width="1115" data-height="76" data-hashorizontaloverflow="false" style="max-height: 261px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;">[trace]                fib:2    
+[trace]                  fib:2    
+[trace]                    fib:2    
+[trace]                    fib:2    
+[trace]                  fib:2    </div></div><div class='variableElement' style='font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 12px; '>ans = 2</div></div></div></div><h2  class = 'S14' id = 'H_EF40317D' ><span>List code traces currently in effect</span></h2><div  class = 'S4'><span>This example shows how to list the code traces currently in effect. First, let's add a second code trace.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre"><span >addCodeTrace(</span><span style="color: rgb(167, 9, 245);">"fib"</span><span >,5,ShowStackDepth = true)</span></span></div></div></div><div  class = 'S8'><span>Call </span><span style=' font-family: monospace;'>fib</span><span> to see the effect of the second code trace.</span></div><div class="CodeBlock"><div class="inlineWrapper outputs"><div  class = 'S9'><span style="white-space: pre"><span >fib(3)</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="439DB897" prevent-scroll="true" data-testid="output_4" style="width: 1145px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;"><div class="textElement eoOutputContent" data-width="1115" data-height="105" data-hashorizontaloverflow="false" style="max-height: 261px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;">[trace]                fib:2    
+[trace]                  fib:2    
+[trace]                    fib:2    
+[trace]                    fib:5    
+[trace]                    fib:2    
+[trace]                  fib:2    
+[trace]                  fib:5    </div></div><div class='variableElement' style='font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 12px; '>ans = 2</div></div></div></div><div  class = 'S8'><span>Now, use </span><span style=' font-family: monospace;'>codeTraces</span><span> to get a table that shows the current code traces.</span></div><div class="CodeBlock"><div class="inlineWrapper outputs"><div  class = 'S9'><span style="white-space: pre"><span >traces = codeTraces</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsVariableTableElement" uid="DA625F68" prevent-scroll="true" data-testid="output_6" style="width: calc(100% - 5px);"><div class="ClientDocument veSpecifier table" id="variableeditor_client_Document_0" widgetid="variableeditor_client_Document_0" tabindex="0"><div class="summaryBar" style="font-size: 12px; font-family: Consolas, Inconsolata, Menlo, monospace;"><span>traces = </span><span style="color: rgb(179, 179, 179); font-style: normal;">2×2 table </span></div><div id="variableeditor_TableViewModel_0" widgetid="variableeditor_TableViewModel_0" class="table ClientViewDiv hasSummaryBar" data-viewid="__1" style="width: 100%; overflow: auto;"><table cellspacing="0" style="border-spacing: 0px; border-collapse: collapse;"><thead><tr><th style="text-overflow: ellipsis; font-family: Arial, sans-serif; font-size: 12px; overflow: hidden; padding: 6px 3px 3px; width: 34px; text-align: left; border: 1px solid rgb(191, 191, 191); background-color: rgb(245, 245, 245); color: rgba(0, 0, 0, 0.75); font-weight: 700; box-sizing: border-box;"><span>&nbsp;</span></th><th style="text-overflow: ellipsis; font-family: Arial, sans-serif; font-size: 12px; overflow: hidden; padding: 6px 3px 3px; width: 134px; min-width: 134px; max-width: 134px; text-align: center; border: 1px solid rgb(191, 191, 191); background-color: rgb(245, 245, 245); color: rgba(0, 0, 0, 0.75); font-weight: 700; box-sizing: border-box;"><span>FunctionName</span></th><th style="text-overflow: ellipsis; font-family: Arial, sans-serif; font-size: 12px; overflow: hidden; padding: 6px 3px 3px; width: 118px; min-width: 118px; max-width: 118px; text-align: center; border: 1px solid rgb(191, 191, 191); background-color: rgb(245, 245, 245); color: rgba(0, 0, 0, 0.75); font-weight: 700; box-sizing: border-box;"><span>LineNumber</span></th></tr></thead><tbody><tr><th style="text-overflow: ellipsis; font-family: Arial, sans-serif; font-size: 12px; overflow: hidden; padding: 6px 3px 3px; width: 34px; text-align: left; border-width: 0px 1px 1px; border-style: solid; border-color: rgb(191, 191, 191); border-image: initial; background-color: rgb(245, 245, 245); color: rgba(0, 0, 0, 0.75); font-weight: 700; box-sizing: border-box;"><span>1</span></th><td style="text-overflow: ellipsis; font-family: Arial, sans-serif; font-size: 12px; overflow: hidden; padding: 3px; width: 134px; min-width: 134px; max-width: 134px; text-align: left; border-width: 0px 1px 1px; border-style: solid; border-color: rgb(191, 191, 191); border-image: initial;"><span>"fib"</span></td><td style="text-overflow: ellipsis; font-family: Arial, sans-serif; font-size: 12px; overflow: hidden; padding: 3px; width: 118px; min-width: 118px; max-width: 118px; text-align: right; border-width: 0px 1px 1px; border-style: solid; border-color: rgb(191, 191, 191); border-image: initial;"><span>2</span></td></tr><tr><th style="text-overflow: ellipsis; font-family: Arial, sans-serif; font-size: 12px; overflow: hidden; padding: 6px 3px 3px; width: 34px; text-align: left; border-width: 0px 1px 1px; border-style: solid; border-color: rgb(191, 191, 191); border-image: initial; background-color: rgb(245, 245, 245); color: rgba(0, 0, 0, 0.75); font-weight: 700; box-sizing: border-box;"><span>2</span></th><td style="text-overflow: ellipsis; font-family: Arial, sans-serif; font-size: 12px; overflow: hidden; padding: 3px; width: 134px; min-width: 134px; max-width: 134px; text-align: left; border-width: 0px 1px 1px; border-style: solid; border-color: rgb(191, 191, 191); border-image: initial;"><span>"fib"</span></td><td style="text-overflow: ellipsis; font-family: Arial, sans-serif; font-size: 12px; overflow: hidden; padding: 3px; width: 118px; min-width: 118px; max-width: 118px; text-align: right; border-width: 0px 1px 1px; border-style: solid; border-color: rgb(191, 191, 191); border-image: initial;"><span>5</span></td></tr></tbody></table></div></div><div class="outputLayer selectedOutputDecorationLayer doNotExport"></div><div class="outputLayer activeOutputDecorationLayer doNotExport"></div><div class="outputLayer scrollableOutputDecorationLayer doNotExport"></div></div></div></div></div><h2  class = 'S14' id = 'H_4D146072' ><span>Clear code traces</span></h2><div  class = 'S4'><span>This example shows how to clear all code traces in effect using the function </span><span style=' font-family: monospace;'>clearCodeTraces</span><span>.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre"><span >clearCodeTraces</span></span></div></div></div><div  class = 'S8'><span>If you call </span><span style=' font-family: monospace;'>codeTraces</span><span> after clearing all code traces, you get an empty table.</span></div><div class="CodeBlock"><div class="inlineWrapper outputs"><div  class = 'S9'><span style="white-space: pre"><span >codeTraces</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="F301C35D" prevent-scroll="true" data-testid="output_7" style="width: 1145px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;"><div class="textElement eoOutputContent" data-width="1115" data-height="46" data-hashorizontaloverflow="false" style="max-height: 261px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;">ans =
+
+  0×2 empty table</div></div></div></div></div><h2  class = 'S14' id = 'H_4E4F3926' ><span>Display the value of a variable or expression</span></h2><div  class = 'S4'><span>This example shows how to display the value of a variable or expression in the code trace output. You can do this by passing in the variable name or expression to </span><span style=' font-family: monospace;'>addCodeTrace</span><span> as an </span><span style=' font-family: monospace;'>Expression</span><span> parameter.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre"><span >addCodeTrace(</span><span style="color: rgb(167, 9, 245);">"fib"</span><span >,2,Expression = </span><span style="color: rgb(167, 9, 245);">"n"</span><span >,ShowStackDepth = true)</span></span></div></div></div><div  class = 'S8'><span>The expression </span><span style=' font-family: monospace;'>"n"</span><span> will be evaluated before line 2 is executed, and it is evaluated using the context and workspace of the function </span><span style=' font-family: monospace;'>fib</span><span>.</span></div><div class="CodeBlock"><div class="inlineWrapper outputs"><div  class = 'S9'><span style="white-space: pre"><span >fib(3)</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="8DA2E2C9" prevent-scroll="true" data-testid="output_8" style="width: 1145px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;"><div class="textElement eoOutputContent" data-width="1115" data-height="76" data-hashorizontaloverflow="false" style="max-height: 261px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;">[trace]                fib:2     n =  3
+[trace]                  fib:2     n =  2
+[trace]                    fib:2     n =  1
+[trace]                    fib:2     n =  0
+[trace]                  fib:2     n =  1</div></div><div class='variableElement' style='font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 12px; '>ans = 2</div></div></div></div><h2  class = 'S14' id = 'H_34A7021D' ><span>Display a label</span></h2><div  class = 'S4'><span>This example shows how to display a user-specified text label in the code trace output. You can do this by passing in the label to </span><span style=' font-family: monospace;'>addCodeTrace</span><span> as a </span><span style=' font-family: monospace;'>Label</span><span> parameter.</span></div><div  class = 'S4'><span>Used in combination with the ability to display a variable or expression, we can get a comprehensive view of how the recursive implementation of </span><span style=' font-family: monospace;'>fib</span><span> works.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S11'><span style="white-space: pre"><span >clearCodeTraces</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre"><span >addCodeTrace(</span><span style="color: rgb(167, 9, 245);">"fib"</span><span >,2,Label = </span><span style="color: rgb(167, 9, 245);">"function entry"</span><span >, Expression = </span><span style="color: rgb(167, 9, 245);">"n"</span><span >,</span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre"><span >    ShowStackDepth = true)</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre"><span >addCodeTrace(</span><span style="color: rgb(167, 9, 245);">"fib"</span><span >,7,Label = </span><span style="color: rgb(167, 9, 245);">"recursive function call"</span><span >, </span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre"><span >    ShowStackDepth = true)</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre"><span >addCodeTrace(</span><span style="color: rgb(167, 9, 245);">"fib"</span><span >,3,Label = </span><span style="color: rgb(167, 9, 245);">"function exit, returning 0"</span><span >, </span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre"><span >    ShowStackDepth = true)</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre"><span >addCodeTrace(</span><span style="color: rgb(167, 9, 245);">"fib"</span><span >,5,Label = </span><span style="color: rgb(167, 9, 245);">"function exit, returning 1"</span><span >, </span><span style="color: rgb(14, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre"><span >    ShowStackDepth = true)</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'>&nbsp;</div></div><div class="inlineWrapper outputs"><div  class = 'S13'><span style="white-space: pre"><span >fib(4)</span></span></div><div  class = 'S10'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="C73A6AEE" prevent-scroll="true" data-testid="output_10" style="width: 1145px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;"><div class="textElement eoOutputContent" data-width="1115" data-height="268" data-hashorizontaloverflow="false" style="max-height: 279px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;">[trace]                fib:2     function entry n =  4
+[trace]                fib:7     recursive function call
+[trace]                  fib:2     function entry n =  3
+[trace]                  fib:7     recursive function call
+[trace]                    fib:2     function entry n =  2
+[trace]                    fib:7     recursive function call
+[trace]                      fib:2     function entry n =  1
+[trace]                      fib:5     function exit, returning 1
+[trace]                      fib:2     function entry n =  0
+[trace]                      fib:3     function exit, returning 0
+[trace]                    fib:2     function entry n =  1
+[trace]                    fib:5     function exit, returning 1
+[trace]                  fib:2     function entry n =  2
+[trace]                  fib:7     recursive function call
+[trace]                    fib:2     function entry n =  1
+[trace]                    fib:5     function exit, returning 1
+[trace]                    fib:2     function entry n =  0
+[trace]                    fib:3     function exit, returning 0</div></div><div class='variableElement' style='font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 12px; '>ans = 3</div></div></div></div><h2  class = 'S14' id = 'H_537F6BCA' ><span>Other Options for addCodeTrace</span></h2><h3  class = 'S15' id = 'H_28A2026B' ><span>NumExpressionOutputs</span></h3><div  class = 'S4'><span style=' font-family: monospace;'>NumExpressionOutputs</span><span> can be 1 (the default) or 0. If you specify 0, then you can specify an expression that has no outputs. One use for this is to call a plotting function from the code trace.</span></div><h3  class = 'S15' id = 'H_129DC2A6' ><span>OutputFile</span></h3><div  class = 'S4'><span>If you specify an output filename using this option, then code traces will be appended to that file instead of being displayed in the Command Window.</span></div><h3  class = 'S15' id = 'H_A53737C6' ><span>DisplayTrace</span></h3><div  class = 'S4'><span>If you specify </span><span style=' font-family: monospace;'>DisplayTrace = false</span><span>, then no trace info will be displayed in the Command Window (or written to </span><span style=' font-family: monospace;'>OutputFile</span><span> if specified).</span></div><div  class = 'S4'><span>Clean up.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'><span style="white-space: pre"><span >clearCodeTraces</span></span></div></div></div><div  class = 'S8'><span style=' font-style: italic;'>Copyright 2022 The MathWorks, Inc.</span></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% Code Trace Examples
+%% 
+% A _code trace_ displays the function name and line number to the Command Window 
+% whenever a specific line of code is executed. It can also display the value 
+% of a value or expression within the executing function.
+% 
+% The following examples illustrate the use of code traces using the function 
+% |fib|, which is a recursive implementation of a Fibonacci number generator.
+%%
+% 
+%   function out = fib(n)
+%   if n == 0
+%       out = 0;
+%   elseif n == 1
+%       out = 1;
+%   else
+%       out = fib(n-1) + fib(n-2);
+%   end
+%
+%% Display function name and line number
+% This example shows how to display the function name and the line number whenever 
+% a specific code line is executed. First, add the code trace.
+
+addCodeTrace("fib",2)
+%% 
+% Next, call the function |fib|:
+
+fib(3)
+%% 
+% Each trace line includes the text "[trace]" (to distinguish these lines from 
+% other Command Window output), the function name, and the line number. 
+%% 
+% The |addCodeTrace| function includes an optional argument called |ShowStackDepth|, 
+% which indents the function name and line number based on the depth of the function 
+% call stack. This option can be helpful for visualizing the workings of a recursive 
+% function such as |fib|.
+
+clearCodeTraces
+addCodeTrace("fib",2,ShowStackDepth = true)
+fib(3)
+%% List code traces currently in effect
+% This example shows how to list the code traces currently in effect. First, 
+% let's add a second code trace.
+
+addCodeTrace("fib",5,ShowStackDepth = true)
+%% 
+% Call |fib| to see the effect of the second code trace.
+
+fib(3)
+%% 
+% Now, use |codeTraces| to get a table that shows the current code traces.
+
+traces = codeTraces
+%% Clear code traces
+% This example shows how to clear all code traces in effect using the function 
+% |clearCodeTraces|.
+
+clearCodeTraces
+%% 
+% If you call |codeTraces| after clearing all code traces, you get an empty 
+% table.
+
+codeTraces
+%% Display the value of a variable or expression
+% This example shows how to display the value of a variable or expression in 
+% the code trace output. You can do this by passing in the variable name or expression 
+% to |addCodeTrace| as an |Expression| parameter.
+
+addCodeTrace("fib",2,Expression = "n",ShowStackDepth = true)
+%% 
+% The expression |"n"| will be evaluated before line 2 is executed, and it is 
+% evaluated using the context and workspace of the function |fib|.
+
+fib(3)
+%% Display a label
+% This example shows how to display a user-specified text label in the code 
+% trace output. You can do this by passing in the label to |addCodeTrace| as a 
+% |Label| parameter.
+% 
+% Used in combination with the ability to display a variable or expression, 
+% we can get a comprehensive view of how the recursive implementation of |fib| 
+% works.
+
+clearCodeTraces
+addCodeTrace("fib",2,Label = "function entry", Expression = "n",...
+    ShowStackDepth = true)
+addCodeTrace("fib",7,Label = "recursive function call", ...
+    ShowStackDepth = true)
+addCodeTrace("fib",3,Label = "function exit, returning 0", ...
+    ShowStackDepth = true)
+addCodeTrace("fib",5,Label = "function exit, returning 1", ...
+    ShowStackDepth = true)
+
+fib(4)
+%% Other Options for addCodeTrace
+% NumExpressionOutputs
+% |NumExpressionOutputs| can be 1 (the default) or 0. If you specify 0, then 
+% you can specify an expression that has no outputs. One use for this is to call 
+% a plotting function from the code trace.
+% OutputFile
+% If you specify an output filename using this option, then code traces will 
+% be appended to that file instead of being displayed in the Command Window.
+% DisplayTrace
+% If you specify |DisplayTrace = false|, then no trace info will be displayed 
+% in the Command Window (or written to |OutputFile| if specified).
+%% 
+% Clean up.
+
+clearCodeTraces
+%% 
+% _Copyright 2022 The MathWorks, Inc._
+##### SOURCE END #####
+-->
+</div></body></html>
