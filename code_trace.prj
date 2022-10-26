@@ -6,7 +6,7 @@
     <param.company>MathWorks</param.company>
     <param.summary>Code traces for exploring and troubleshooting executing code</param.summary>
     <param.description>Code Trace for MATLAB is a collection of functions for creating and manipulating code traces, which can be used to help understand what is happening in code as it executes. A code trace prints a brief note to the MATLAB Command Window whenever a specific line of code is executed. A code trace might just print the function name and line number, or it might also print a label and the value of variable or expression.</param.description>
-    <param.screenshot />
+    <param.screenshot>${PROJECT_ROOT}/doc/display-function-name-and-line-number.png</param.screenshot>
     <param.version>2.0.0</param.version>
     <param.output>${PROJECT_ROOT}/Code Trace for MATLAB.mltbx</param.output>
     <param.products.name />
@@ -76,7 +76,6 @@ releases
     <param.additional.sw.mac.url />
     <param.additional.sw.linux.url />
     <unset>
-      <param.screenshot />
       <param.output />
       <param.products.name />
       <param.products.id />
