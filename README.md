@@ -6,6 +6,8 @@
 
 ![screen shot of displaying a function name and line number](./doc/display-function-name-and-line-number.png)
 
+![screen shot of displaying a the value of variable](./doc/display-variable-or-expression.png)
+
 ## Basic Usage 
 
 Call `addCodeTrace` with the name of a MATLAB function or script file and the line number that you want to trace:
