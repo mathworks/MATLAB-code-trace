@@ -20,7 +20,7 @@ Then, call your function as your normally would:
 out = myfunc(input1,input2);
 ```
 
-See the script CodeTraceExamples.mlx, in the doc folder, for examples.
+See the script GettingStarted.mlx, in the doc folder, for examples.
 
 ## Installation
 
